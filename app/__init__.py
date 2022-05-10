@@ -1,4 +1,3 @@
-from ensurepip import bootstrap
 from flask import Flask
 from config import Config
 from flask_bootstrap import Bootstrap
@@ -11,7 +10,7 @@ def createapp(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
 
-    bootstrap.init__app(app)
+    bootstrap.init_app(app)
 
     """registering blueprints"""
     from app.main import main as main_bp
